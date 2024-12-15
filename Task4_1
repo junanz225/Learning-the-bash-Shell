@@ -1,0 +1,10 @@
+#!/bin/bash
+
+FILE=$1
+N=${2:-10}
+
+sort -nr "$FILE" | head -n "$N"
+
+# Sample run instruction
+# In the top directory of the repo, which contains this script and the sample text4_1.txt file, in bash shell, run
+# ./Task4_1 text4_1.txt 5
