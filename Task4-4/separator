@@ -1,0 +1,2 @@
+output=${PATH//:/'\n'}
+echo $output
