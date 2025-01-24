@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#        Usage
+#        ./extractor fieldname
+#
+#        Extract specified field from file albums and output to the terminal. In this case,
+#        field name should be one of (artist|title|label|year)
+#
+
+# Define the getfield function
+getfield() {
+    local field_name="$1"
+    local header
+    header=$(head -n 1 albums)  # Read the header from the file 'albums'
+
+    # Convert the header into an array using '|' as a delimiter
+    IFS='|' read -r -a columns <<< "$header"
+
+    # Search for the field name and return the column index
+    for i in "${!columns[@]}"; do
+        if [[ "${columns[$i]}" == "$field_name" ]]; then
+            echo $((i + 1))  # Return 1-based index
+            return
+        fi
+    done
+}
+
+fieldname=$1
+cut -f$(getfield $fieldname) -d\| albums
+
+
