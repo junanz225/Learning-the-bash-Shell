@@ -1,2 +1,4 @@
+#!/bin/bash
+
 output=${PATH//:/'\n'}
 echo $output
