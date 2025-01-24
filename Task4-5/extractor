@@ -26,6 +26,6 @@ getfield() {
 }
 
 fieldname=$1
-cut -f$(getfield "$fieldname") -d\| albums
+cut -f"$(getfield "$fieldname")" -d\| albums
 
 
