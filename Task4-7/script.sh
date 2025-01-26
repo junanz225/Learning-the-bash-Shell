@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #
-#        This function helps to filter files' name in the current directory, with the specified modified date
+#        This function helps to filter files' name in the current directory, with the specified modified date.
+#        Currently, the column number to be extracted is hardcoded.
 #
 #        Usage
 #        Step 1: source script.sh
