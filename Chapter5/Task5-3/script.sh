@@ -35,7 +35,6 @@ recls () {
     for tryfile in "$@"; do
         echo "$tryfile"
         if [ -d "$tryfile" ]; then
-            thisfile="$tryfile"
             recdir "$tryfile"
         fi
     done
